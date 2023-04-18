@@ -1,7 +1,10 @@
 <script lang="ts">
   let gptResponse = "";
+  let loading = false;
+  let promise: Promise<Response> | null = null;
 
   async function onSubmit(e: any) {
+    loading = true;
     const formData = new FormData(e.target);
 
     const data: any = {};
@@ -18,6 +21,7 @@
       },
       body: JSON.stringify(data),
     });
+    promise = rawResponse;
     const content = await rawResponse;
 
     gptResponse = await content.text();
@@ -56,5 +60,16 @@
       >
     </div>
   </div>
-  <button class="btn btn-wide">Submit</button>
+
+  {#if !loading}
+    <button class="btn btn-wide">Submit</button>
+  {:else}
+    {#await promise}
+      <button class="btn loading">loading</button>
+    {:then number}
+      <button class="btn btn-wide">Submit</button>
+    {:catch error}
+      <p style="color: red">{error.message}</p>
+    {/await}
+  {/if}
 </form>
