@@ -13,7 +13,7 @@
       data[key] = value;
     }
 
-    const rawResponse = fetch("./translate", {
+    const rawResponse = fetch("./", {
       method: "POST",
       headers: {
         Accept: "application/json",

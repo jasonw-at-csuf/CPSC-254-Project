@@ -13,7 +13,7 @@
       data[key] = value;
     }
 
-    const rawResponse = fetch("./time_complexity", {
+    const rawResponse = fetch("./", {
       method: "POST",
       headers: {
         Accept: "application/json",
