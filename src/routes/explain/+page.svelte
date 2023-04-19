@@ -38,8 +38,8 @@
   <div class="flex flex-col w-full h-full gap-2 md:flex-row">
     <div class="flex flex-col w-full h-full gap-2 md:w-1/2">
       <span class="label-text">Code</span>
-      <select class="select select-bordered w-full">
-        <option disabled selected>Select Programming Language</option>
+      <select name="language" class="select select-bordered w-full">
+        <option selected>Auto Detect</option>
         <option>C++</option>
         <option>Python</option>
         <option>Java</option>
@@ -47,7 +47,7 @@
       </select>
       <textarea
         name="code"
-        class="text-xs border resize-none w-full h-full p-2"
+        class="text-xs border resize-none w-full h-full p-2 font-mono"
       />
     </div>
     <div class="flex flex-col w-full h-full gap-2 md:w-1/2">
@@ -55,7 +55,9 @@
       <select class="select select-bordered w-full">
         <option selected>English</option>
       </select>
-      <textarea disabled class="text-xs border resize-none w-full h-full p-2"
+      <textarea
+        disabled
+        class="text-xs border resize-none w-full h-full p-2 font-mono"
         >{gptResponse}</textarea
       >
     </div>
