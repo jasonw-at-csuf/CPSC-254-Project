@@ -5,6 +5,10 @@ export async function POST({ request }) {
   const data = await request.json();
   console.log(data);
 
+  if (data["code"].length > 2000) {
+    return new Response("Code is too long. (Max 2000 characters)");
+  }
+
   const configuration = new Configuration({
     apiKey: OPENAI_API_KEY,
   });
@@ -16,13 +20,13 @@ export async function POST({ request }) {
       {
         role: "system",
         content:
-          "What is the average time complexity of the following code? Do not elaborate on the code, just give the time complexity.",
+          "Reply to users with a message containing only the time complexity of given code. Return 0 if there is no complexity to be derived.",
       },
       { role: "user", content: data["code"] ?? "" },
     ],
   });
   console.log(response.data["choices"][0].message?.content);
-  const regex = /O\(.*?\)/g;
+  const regex = /O\(.*?\)/;
   const time_complexity =
     response.data["choices"][0].message?.content.match(regex);
 

@@ -5,6 +5,10 @@ export async function POST({ request }) {
   const data = await request.json();
   console.log(data);
 
+  if (data["code"].length > 2000) {
+    return new Response("Code is too long. (Max 2000 characters)");
+  }
+
   const configuration = new Configuration({
     apiKey: OPENAI_API_KEY,
   });

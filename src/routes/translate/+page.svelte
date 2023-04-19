@@ -44,6 +44,7 @@
         <option value="python">Python</option>
         <option value="java">Java</option>
         <option value="javascript">Javascript</option>
+        <option value="typescript">Typescript</option>
       </select>
       <textarea
         required
@@ -59,6 +60,7 @@
         <option value="python">Python</option>
         <option value="java">Java</option>
         <option value="javascript">Javascript</option>
+        <option value="typescript">Typescript</option>
       </select>
       <textarea
         disabled
