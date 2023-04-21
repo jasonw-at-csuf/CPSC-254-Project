@@ -59,7 +59,7 @@
   {:else}
     {#await promise}
       <button class="btn loading">loading</button>
-    {:then number}
+    {:then}
       <button class="btn btn-wide">Submit</button>
     {:catch error}
       <p style="color: red">{error.message}</p>
