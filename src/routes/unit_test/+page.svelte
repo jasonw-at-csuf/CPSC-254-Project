@@ -54,14 +54,14 @@
     </div>
     <div class="flex flex-col w-full h-full gap-2 md:w-1/2">
       <span class="label-text">Translation</span>
-      <select name="translate" required class="select select-bordered w-full">
+      <!-- <select name="translate" required class="select select-bordered w-full">
         <option value="" disabled selected>Select Programming Language</option>
         <option value="cpp">C++</option>
         <option value="python">Python</option>
         <option value="java">Java</option>
         <option value="javascript">Javascript</option>
         <option value="typescript">Typescript</option>
-      </select>
+      </select> -->
       <textarea
         disabled
         class="text-xs border resize-none w-full h-full p-2 font-mono"

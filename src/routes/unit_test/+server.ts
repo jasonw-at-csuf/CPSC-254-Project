@@ -1,4 +1,4 @@
-import { getBigO } from "../../lib/bigo";
+import { stripCodeBlocks } from "$lib/strip";
 import { promptGPT } from "../../lib/openai";
 import type { RequestEvent } from "./$types";
 
@@ -13,9 +13,11 @@ export async function POST({
     return new Response("Code is too long. (Max 2000 characters)");
   }
   const response = await promptGPT(
-    "Reply to users with a message containing only the time complexity of given code. Return 0 if there is no complexity to be derived.",
+    `Write unit tests for the following ${
+      data["language"] ?? ""
+    } code. Only provide the code with no explanation and do not include the code block formatting`,
     data["code"] ?? ""
   );
-  const time_complexity = getBigO(response ?? "");
-  return new Response(String(time_complexity));
+  console.log(response);
+  return new Response(String(stripCodeBlocks(response ?? "")));
 }

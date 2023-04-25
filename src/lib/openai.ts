@@ -15,7 +15,10 @@ export async function promptGPT(system: string, question: string) {
       { role: "user", content: question },
     ],
   });
-
-  console.log(response.data["choices"][0].message?.content);
-  return response.data["choices"][0].message?.content;
+  try {
+    console.log(response?.data["choices"][0].message?.content);
+    return response?.data["choices"][0].message?.content;
+  } catch {
+    return "";
+  }
 }

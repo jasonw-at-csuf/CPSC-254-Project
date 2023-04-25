@@ -1,10 +1,6 @@
 <script>
   import "../app.css";
-  import {
-    ToiletsPortableSolid,
-    StarHalfRegular,
-    BarsSolid,
-  } from "svelte-awesome-icons";
+  import { BarsSolid } from "svelte-awesome-icons";
 </script>
 
 <svelte:head>
@@ -47,6 +43,8 @@
         <li><a href="./explain">Explain Code</a></li>
         <li><a href="./time_complexity">Time Complexity</a></li>
         <li><a href="./translate">Translate Code</a></li>
+        <li><a href="./documentation">Write Documentation</a></li>
+        <li><a href="./unit_test">Write Unit Tests</a></li>
       </ul>
     </div>
   </div>

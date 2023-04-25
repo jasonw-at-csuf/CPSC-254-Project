@@ -1,6 +1,11 @@
 import { promptGPT } from "../../lib/openai";
+import type { RequestEvent } from "./$types";
 
-export async function POST({ request }): Promise<Response> {
+export async function POST({
+  request,
+}: {
+  request: RequestEvent["request"];
+}): Promise<Response> {
   const data = await request.json();
   console.log(data);
   if (data["code"].length > 2000) {

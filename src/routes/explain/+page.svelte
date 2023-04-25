@@ -13,7 +13,7 @@
       data[key] = value;
     }
 
-    const rawResponse = fetch("./explain", {
+    const rawResponse = fetch("", {
       method: "POST",
       headers: {
         Accept: "application/json",
