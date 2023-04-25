@@ -53,7 +53,7 @@
       />
     </div>
     <div class="flex flex-col w-full h-full gap-2 md:w-1/2">
-      <span class="label-text">Translation</span>
+      <span class="label-text">Unit Tests</span>
       <!-- <select name="translate" required class="select select-bordered w-full">
         <option value="" disabled selected>Select Programming Language</option>
         <option value="cpp">C++</option>
