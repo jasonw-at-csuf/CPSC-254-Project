@@ -1,9 +1,20 @@
 # Final-Project
 
-Add the following details to the **README.md** file
+## Group Members
 
-A. Group Member Details such as NAME, CWID and EMAIl
+Jason Wong, CWID, EMAIL
 
-B. A brief description about your project
+Ronald Lee, 885884916, ronaldvlee@csu.fullerton.edu
 
-C. Steps on how to download and run your project.
+## Description
+
+Twofivefour is a tool for students to use to help explain and translate code.
+
+## How to run
+
+install dependencies: `npm i`
+
+to run in dev mode: `npm run dev`
+
+since this project does use an api key, the website is deployed onto: https://twofivefour.jason-wong.me/
+
