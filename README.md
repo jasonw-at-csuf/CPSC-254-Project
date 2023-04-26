@@ -2,9 +2,13 @@
 
 ## Group Members
 
-Jason Wong, CWID, EMAIL
+Nathan Kim, CWID, EMAIL
 
 Ronald Lee, 885884916, ronaldvlee@csu.fullerton.edu
+
+Patrick Phe, CWID, EMAIL
+
+Jason Wong, CWID, EMAIL
 
 ## Description
 
