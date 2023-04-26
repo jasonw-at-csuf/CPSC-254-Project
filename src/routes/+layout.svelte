@@ -38,7 +38,7 @@
   <div class="drawer-side border shadow-md">
     <label for="my-drawer-2" class="drawer-overlay" />
     <div class="menu p-4 w-80 bg-base-100 text-base-content gap-20">
-      <div class="p-4 font-bold">twofivefour</div>
+      <div class="p-4 font-bold"><a href='/'>twofivefour</a></div>
       <ul>
         <li><a href="./explain">Explain Code</a></li>
         <li><a href="./time_complexity">Time Complexity</a></li>
