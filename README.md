@@ -8,7 +8,7 @@ Ronald Lee, 885884916, ronaldvlee@csu.fullerton.edu
 
 Patrick Phe, CWID, EMAIL
 
-Jason Wong, CWID, EMAIL
+Jason Wong, 886710987, wayson@csu.fullerton.edu
 
 ## Description
 
