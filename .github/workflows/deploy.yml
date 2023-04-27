@@ -31,6 +31,6 @@ jobs:
           SSH_KEY: ${{ secrets.SSH_KEY }}
           SSH_HOST: ${{ secrets.SSH_HOST }}
       - name: Stop the server
-        run: ssh staging 'cd twofivefour && docker compose down'
+        run: ssh staging 'cd ~/CPSC-254-Project && docker compose down'
       - name: Start the server
-        run: ssh staging 'cd twofivefour && docker compose up -d'
+        run: ssh staging 'cd ~/CPSC-254-Project && docker compose up -d'
