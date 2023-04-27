@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  update-dependencies:
+  auto-deploy:
     runs-on: ubuntu-latest
     steps:
       # - name: "Checkout production branch"
@@ -32,5 +32,7 @@ jobs:
           SSH_HOST: ${{ secrets.SSH_HOST }}
       - name: Stop the server
         run: ssh staging 'cd ~/CPSC-254-Project && docker compose down'
+      - name: Stop the server
+        run: ssh staging 'cd ~/CPSC-254-Project && git pull'
       - name: Start the server
         run: ssh staging 'cd ~/CPSC-254-Project && docker compose up -d'
