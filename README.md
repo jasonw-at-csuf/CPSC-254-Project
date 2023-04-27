@@ -16,9 +16,73 @@ Twofivefour is a tool for students to use to help explain and translate code.
 
 ## How to run
 
-install dependencies: `npm i`
+For a development or demo environment, we recommend running the app through Node as it has a faster build process. However, a Dockerfile and docker-compose has also been provided.
 
-to run in dev mode: `npm run dev`
+### Node.js (Recommended)
 
-since this project does use an api key, the website is deployed onto: https://twofivefour.jason-wong.me/
+1. Install Node.js v18
+
+2. Clone the repository:
+```
+git clone https://github.com/cpsc-254-spring-2023/cpsc-254-final-project-jason.git
+cd cpsc-254-final-project-jason
+```
+
+3. Create a .env file with an OpenAI API key
+
+```
+echo "OPENAI_API_KEY=[YOUR KEY HERE]" >> .env
+```
+
+4. Install dependencies:
+```
+npm install
+# also works with pnpm
+pnpm install
+```
+
+5. Run in dev mode:
+```
+npm run dev
+```
+
+### Docker
+
+1. Docker
+
+2. Clone the repository:
+```
+git clone https://github.com/cpsc-254-spring-2023/cpsc-254-final-project-jason.git
+cd cpsc-254-final-project-jason
+```
+
+3. Create a .env file with an OpenAI API key
+
+```
+echo "OPENAI_API_KEY=[YOUR KEY HERE]" >> .env
+```
+
+4. Build the image
+
+```
+docker build -t twofivefour .
+```
+
+5. Run the container
+
+```
+docker run -p 3000:3000 twofivefour
+```
+
+Alternatively, the image can be built and ran with 
+
+```
+docker compose build
+docker compose up
+```
+
+The app will be available at http://localhost:3000.
+
+
+A live demo of the app can be found at: https://twofivefour.jason-wong.me/
 
