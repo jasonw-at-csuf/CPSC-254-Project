@@ -10,10 +10,10 @@ jobs:
   update-dependencies:
     runs-on: ubuntu-latest
     steps:
-      - name: "Checkout production branch"
-        uses: actions/checkout@v3
-        with:
-          ref: prod
+      # - name: "Checkout production branch"
+      #   uses: actions/checkout@v3
+      #   with:
+      #     ref: prod
       - name: Configure SSH
         run: |
           mkdir -p ~/.ssh/
