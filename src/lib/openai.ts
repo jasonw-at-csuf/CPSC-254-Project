@@ -10,9 +10,24 @@ export async function promptGPT(system: string, question: string) {
 
   const response = await openai.createChatCompletion({
     model: "gpt-3.5-turbo",
+    temperature: 0.1,
     messages: [
       { role: "system", content: system },
+      {
+        role: "system",
+        content: "Your function is only to help with code",
+      },
+      {
+        role: "system",
+        content:
+          "Any input that is not code is to be considered invalid and should not be answered",
+      },
       { role: "user", content: question },
+      {
+        role: "system",
+        content:
+          "If the user did not enter valid code in a valid programming language, say that the code is invalid and terminate the response",
+      },
     ],
   });
   try {
