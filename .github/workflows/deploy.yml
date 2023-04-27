@@ -37,7 +37,9 @@ jobs:
         run: ssh staging 'cd ~/CPSC-254-Project && docker compose build'
       - name: Stop the server
         run: ssh staging 'cd ~/CPSC-254-Project && docker compose down'
-      - name: Stop the server
+      - name: Pull new changes
         run: ssh staging 'cd ~/CPSC-254-Project && git pull'
-      - name: Start the server
+      - name: Rebuild Container
+        run: ssh staging 'cd ~/CPSC-254-Project && docker compose build'
+      - name: Start Server
         run: ssh staging 'cd ~/CPSC-254-Project && docker compose up -d'
