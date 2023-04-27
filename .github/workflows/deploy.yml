@@ -8,6 +8,7 @@ on:
 
 jobs:
   auto-deploy:
+    if: github.repository == 'jasonw-at-csuf/CPSC-254-Project'
     runs-on: ubuntu-latest
     steps:
       # - name: "Checkout production branch"
@@ -30,11 +31,11 @@ jobs:
           SSH_USER: ${{ secrets.SSH_USER }}
           SSH_KEY: ${{ secrets.SSH_KEY }}
           SSH_HOST: ${{ secrets.SSH_HOST }}
-      - name: Stop the server
-        run: ssh staging 'cd ~/CPSC-254-Project && docker compose down'
       - name: Pull new changes
         run: ssh staging 'cd ~/CPSC-254-Project && git pull'
       - name: Rebuild Container
         run: ssh staging 'cd ~/CPSC-254-Project && docker compose build'
+      - name: Stop the server
+        run: ssh staging 'cd ~/CPSC-254-Project && docker compose down'
       - name: Start Server
         run: ssh staging 'cd ~/CPSC-254-Project && docker compose up -d'
