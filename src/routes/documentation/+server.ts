@@ -1,5 +1,5 @@
 import { stripCodeBlocks } from "$lib/strip";
-import { promptGPT } from "../../lib/openai";
+import { promptGPT } from "$lib/openai";
 import type { RequestEvent } from "./$types";
 
 export async function POST({
@@ -13,8 +13,9 @@ export async function POST({
     return new Response("Code is too long. (Max 2000 characters)");
   }
   const response = await promptGPT(
-    `Write a ${data["language"]} docstring comment for the following code in the appropriate language, include inputs and outputs`,
-    data["code"] ?? ""
+    `Write a ${data["language"]} docstring comment for the following code in the appropriate language, include inputs and outputs and surround the code in code blocks`,
+    data["code"] ?? "",
+    0.2
   );
   console.log(response);
   return new Response(String(stripCodeBlocks(response ?? "")));

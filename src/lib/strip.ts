@@ -5,5 +5,13 @@
  * @returns {string} The code block found in the string, or an empty string if none is found.
  */
 export function stripCodeBlocks(string: string): string {
-  return string.replaceAll("```\n", "").replaceAll("```", "");
+  const r = /^(```)([\s\S])*^(```)/gm;
+  const matches = string.match(r);
+  if (matches) {
+    return matches[0]
+      .split("\n")
+      .filter((line) => !line.startsWith("```"))
+      .join("\n");
+  }
+  return "";
 }

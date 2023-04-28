@@ -1,4 +1,5 @@
-import { promptGPT } from "../../lib/openai";
+import { stripCodeBlocks } from "$lib/strip";
+import { promptGPT } from "$lib/openai";
 import type { RequestEvent } from "./$types";
 
 export async function POST({
@@ -16,5 +17,5 @@ export async function POST({
     data["code"] ?? ""
   );
   console.log(response);
-  return new Response(String(response));
+  return new Response(String(stripCodeBlocks(response ?? "")));
 }
