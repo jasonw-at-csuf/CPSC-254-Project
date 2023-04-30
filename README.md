@@ -2,7 +2,7 @@
 
 ## Group Members
 
-Nathan Kim, CWID, EMAIL
+Nathan Kim, 887582997, nathan.kim@csu.fullerton.edu
 
 Ronald Lee, 885884916, ronaldvlee@csu.fullerton.edu
 
