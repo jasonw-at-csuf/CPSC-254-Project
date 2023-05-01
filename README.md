@@ -6,7 +6,7 @@ Nathan Kim, 887582997, nathan.kim@csu.fullerton.edu
 
 Ronald Lee, 885884916, ronaldvlee@csu.fullerton.edu
 
-Patrick Phe, 887523675, patrickphe@csu.fullerton.edu
+Patrick Phe, 887523785, patrickphe@csu.fullerton.edu
 
 Jason Wong, 886710987, wayson@csu.fullerton.edu
 
